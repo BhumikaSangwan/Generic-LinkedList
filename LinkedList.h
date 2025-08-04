@@ -14,6 +14,7 @@ class LinkedList {
 
     public: 
         LinkedList();
+        ~LinkedList();
 
         void prepend(T data);
         void insert(T data, int index);

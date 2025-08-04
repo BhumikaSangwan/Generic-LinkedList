@@ -7,9 +7,21 @@ template <typename T>
 LinkedList<T>::LinkedList() : head(nullptr), tail(nullptr) {}
 
 template <typename T>
+LinkedList<T> :: ~LinkedList() {
+    Node<T>* node = head;
+    while (node != nullptr)
+    {
+        Node<T>* next = node->next;
+        delete node;
+        node = next;
+    }    
+}
+
+template <typename T>
 Node<T>* LinkedList<T>::newNode(T data) {
     return new Node<T>(data);
 }
+
 
 template <typename T>
 Node<T>* LinkedList<T>:: getNodeAddressAtIdx(int index)
@@ -115,5 +127,4 @@ void LinkedList<T>::print()
         std::cout << node->data << " -> ";
         node = node->next;
     }
-    std::cout << "\nWhole list traversed !!\n";
 }

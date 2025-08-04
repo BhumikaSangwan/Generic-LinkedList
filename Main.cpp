@@ -25,6 +25,5 @@ int main()
     list.removeFromIndex(1);
     list.print();
 
-    std::cout << "\nDone";
     return 0;
 }
